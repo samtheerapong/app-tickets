@@ -15,13 +15,14 @@
 
 # <b>คู่มือส่วนตัว</b>
 
+
 # กำหนดสิทธิ์
 
-## ติดตั้ง dektrium user
+# ติดตั้ง dektrium user
 
-###  1. Download
+##  1. Download
    Command -> composer require dektrium/yii2-user
-### 2. Config
+## 2. Config
    config\web.php
 
 ```
@@ -51,7 +52,7 @@ modules ระดับเดียวกับ components
     ],
 ```
 
-### 3. Migrate ลง Database
+## 3. Migrate ลง Database
 
 Command ->   php yii migrate/up --migrationPath=@vendor/dektrium/yii2-user/migrations
 
@@ -96,17 +97,88 @@ Yii::$app->user->isGuest ?
 ```
 http://localhost/project/web/user/registration/confirm?id=1&code=xxxxxxxxxxxx
 ```
+** code นำมาจากตาราง token ของ id user นั้นๆ
+
+
+# ติดตั้ง dektrium rbac
+## 1.	Download
+Command ->   composer require dektrium/yii2-rbac:1.0.0-alpha@dev
+## 2.	Config
+config\console.php
+```
+'components' => [
+        'authManager'=>[
+            'class'=>'dektrium\rbac\components\DbManager'
+        ],
+],
+
+```
+
+config\web.php
+```
+'modules' => [
+        'rbac' => 'dektrium\rbac\RbacWebModule',   
+    ],
+
+```
+## 3. Migrate ลง Database
+Command ->   php yii migrate/up --migrationPath=@yii/rbac/migrations
+
+อ้างอิง https://github.com/dektrium/yii2-rbac
+
+Youtube https://www.youtube.com/watch?v=zKkPRMjD4Fs
 
 
 
+# ติดตั้ง RBAC Manager
 
+## 1.	Download
+composer require mdmsoft/yii2-admin "~2.0"
+## 2.	Config
+config\web.php
+```
+'modules' => [
+      'admin' => [
+            'class' => 'mdm\admin\Module',
+           'layout'=>'left-menu'
+         ],
+    ],
+```
 
+```
+'as access' => [
+        'class' => 'mdm\admin\components\AccessControl',
+        'allowActions' => [
+            '*', //Allow All For Dev
+            'site/*',
+            'admin/*',
+        ]
+    ],
+'components' => [],
+```
 
+ตัวอย่างเมนู Navbar
+```
+echo Nav::widget([
+        'options' => ['class' => 'navbar-nav ml-auto'],
+        'items' => [
+            ['label' => 'Home', 'url' => ['/site/index']],
+            ['label' => 'About', 'url' => ['/site/about']],
+            ['label' => 'Contact', 'url' => ['/site/contact']],
+            Yii::$app->user->isGuest ?
+                ['label' => 'Login', 'url' => ['/user/security/login']] :
+                ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+                    'url' => ['/user/security/logout'],
+                    'linkOptions' => ['data-method' => 'post']],
+                ['label' => 'Register', 'url' => ['/user/registration/register'], 'visible' => Yii::$app->user->isGuest]
+        ],
+    ]);
+```
 
 
 
 # กำหนด url manager
-
+กำหนดใน config\web.php
 ```
 'urlManager' => [
             'class' => 'yii\web\UrlManager',
