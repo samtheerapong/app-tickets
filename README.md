@@ -25,7 +25,9 @@ composer update
 
 ##  1. Download
 
-```composer require dektrium/yii2-user```
+```
+composer require dektrium/yii2-user
+```
 ## 2. Config
    config\web.php
 
@@ -36,7 +38,6 @@ composer update
             'identityClass' => 'dektrium\user\models\User',
             'enableAutoLogin' => false,
         ],
-
     ],
 ```
 
@@ -52,7 +53,6 @@ modules ระดับเดียวกับ components
             'cost' => 12,
             'admins' => ['admin']
         ],
-
     ],
 ```
 
