@@ -10,12 +10,26 @@
 1. git clone https://github.com/samtheerapong/app-tickets.git
 2. cd app-tickets
 3. composer update
-
-
 http://localhost/app-tickets/web/ticket/index
 
-add url manager 
 
+คู่มือส่วนตัว
+
+กำหนดสิทธิ์
+## ติดตั้ง dektrium user
+1.	Download
+Command ->   composer require dektrium/yii2-user
+2.	Config
+config\web.php
+
+
+
+
+
+
+
+
+กำหนด url manager 
 ```
 'urlManager' => [
             'class' => 'yii\web\UrlManager',
