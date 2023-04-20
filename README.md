@@ -11,6 +11,9 @@
 1. git clone https://github.com/samtheerapong/app-tickets.git
 2. cd app-tickets
 3. composer update
+```
+composer update
+```
    http://localhost/app-tickets/web/ticket/index
 
 # <b>คู่มือส่วนตัว</b>
@@ -21,7 +24,8 @@
 # ติดตั้ง dektrium user
 
 ##  1. Download
-   Command -> composer require dektrium/yii2-user
+
+```composer require dektrium/yii2-user```
 ## 2. Config
    config\web.php
 
@@ -53,8 +57,9 @@ modules ระดับเดียวกับ components
 ```
 
 ## 3. Migrate ลง Database
-
-Command ->   php yii migrate/up --migrationPath=@vendor/dektrium/yii2-user/migrations
+```
+php yii migrate/up --migrationPath=@vendor/dektrium/yii2-user/migrations
+```
 
 
 อ้างอิง
@@ -102,7 +107,9 @@ http://localhost/project/web/user/registration/confirm?id=1&code=xxxxxxxxxxxx
 
 # ติดตั้ง dektrium rbac
 ## 1.	Download
-Command ->   composer require dektrium/yii2-rbac:1.0.0-alpha@dev
+```
+composer require dektrium/yii2-rbac:1.0.0-alpha@dev
+```
 ## 2.	Config
 config\console.php
 ```
@@ -133,7 +140,9 @@ Youtube https://www.youtube.com/watch?v=zKkPRMjD4Fs
 # ติดตั้ง RBAC Manager
 
 ## 1.	Download
+```
 composer require mdmsoft/yii2-admin "~2.0"
+```
 ## 2.	Config
 config\web.php
 ```
