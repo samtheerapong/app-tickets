@@ -2,7 +2,7 @@
     <a href="#" target="_blank">
         <img src="https://avatars.githubusercontent.com/u/130217376?s=96&v=4" height="100px">
     </a>
-    <h1 align="center">Yii 2 Basic Project Dinamic form</h1>
+    <h1 align="center">Yii 2 Basic Ticket</h1> ระบบแจ้งซ่อม
     <br>
 </p>
 
