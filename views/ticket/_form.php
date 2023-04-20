@@ -4,6 +4,9 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use wbraganca\dynamicform\DynamicFormWidget;  // **** https://github.com/wbraganca/yii2-dynamicform  *****
 
+//
+use kartik\date\DatePicker;
+
 /* @var $this yii\web\View */
 /* @var $model app\models\Ticket */
 /* @var $form yii\widgets\ActiveForm */
@@ -19,7 +22,18 @@ use wbraganca\dynamicform\DynamicFormWidget;  // **** https://github.com/wbragan
             <?= $form->field($modelTicket, 'ticket_number')->textInput(['maxlength' => true]) ?>
         </div>
         <div class="col-sm-6">
-            <?= $form->field($modelTicket, 'ticket_date')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($modelTicket, 'ticket_date')->widget(
+                DatePicker::class,
+                [
+                    'language' => 'th',
+                    'options' => ['placeholder' => 'Select date ...'],
+                    'pluginOptions' => [
+                        'format' => 'yyyy-mm-dd',
+                        'todayHighlight' => true,
+                        'autoclose' => true,
+                    ]
+                ]
+            ); ?>
         </div>
     </div>
     <div class="row">
@@ -80,7 +94,7 @@ use wbraganca\dynamicform\DynamicFormWidget;  // **** https://github.com/wbragan
                     <div class="item panel panel-default"><!-- widgetBody -->
                         <div class="panel-heading">
                             <h3 class="panel-title pull-left">
-                                งานที่
+                             #
                             </h3>
                             <div class="pull-right">
                                 <button type="button" class="add-item btn btn-success btn-xs"><i class="glyphicon glyphicon-plus"></i></button>
@@ -95,24 +109,46 @@ use wbraganca\dynamicform\DynamicFormWidget;  // **** https://github.com/wbragan
                                 echo Html::activeHiddenInput($modelJob, "[{$i}]id");
                             }
                             ?> <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-5">
                                     <?= $form->field($modelJob, "[{$i}]job_discrption")->textInput(['maxlength' => true]) ?>
                                 </div>
-                                <div class="col-sm-2">
-                                    <?= $form->field($modelJob, "[{$i}]job_request_at")->textInput(['maxlength' => true]) ?>
+                                <div class="col-sm-3">
+                                    <?= $form->field($modelJob, "[{$i}]job_request_at")->widget(
+                                        DatePicker::class,
+                                        [
+                                            'language' => 'th',
+                                            'options' => ['placeholder' => 'Select date ...'],
+                                            'pluginOptions' => [
+                                                'format' => 'yyyy-mm-dd',
+                                                'todayHighlight' => true,
+                                                'autoclose' => true,
+                                            ]
+                                        ]
+                                    ); ?>
                                 </div>
-                                <div class="col-sm-2">
-                                    <?= $form->field($modelJob, "[{$i}]job_broken_at")->textInput(['maxlength' => true]) ?>
+                                <div class="col-sm-3">
+                                    <?= $form->field($modelJob, "[{$i}]job_broken_at")->widget(
+                                        DatePicker::class,
+                                        [
+                                            'language' => 'th',
+                                            'options' => ['placeholder' => 'Select date ...'],
+                                            'pluginOptions' => [
+                                                'format' => 'yyyy-mm-dd',
+                                                'todayHighlight' => true,
+                                                'autoclose' => true,
+                                            ]
+                                        ]
+                                    ); ?>
                                 </div>
-                                <div class="col-sm-2">
+                                <div class="col-sm-1">
                                     <?= $form->field($modelJob, "[{$i}]job_quantity")->textInput(['maxlength' => true]) ?>
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <?= $form->field($modelJob, "[{$i}]job_location_id")->textInput(['maxlength' => true]) ?>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-8">
                                     <?= $form->field($modelJob, "[{$i}]job_remask")->textInput(['maxlength' => true]) ?>
                                 </div>
                             </div>
