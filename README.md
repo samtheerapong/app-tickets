@@ -13,15 +13,15 @@
 3. composer update
    http://localhost/app-tickets/web/ticket/index
 
-<b>คู่มือส่วนตัว</b>
+# <b>คู่มือส่วนตัว</b>
 
-กำหนดสิทธิ์
+# กำหนดสิทธิ์
 
 ## ติดตั้ง dektrium user
 
-1. Download
+###  1. Download
    Command -> composer require dektrium/yii2-user
-2. Config
+### 2. Config
    config\web.php
 
 ```
@@ -51,7 +51,7 @@ modules ระดับเดียวกับ components
     ],
 ```
 
-3. Migrate ลง Database
+### 3. Migrate ลง Database
 
 Command ->   php yii migrate/up --migrationPath=@vendor/dektrium/yii2-user/migrations
 
@@ -105,7 +105,7 @@ http://localhost/project/web/user/registration/confirm?id=1&code=xxxxxxxxxxxx
 
 
 
-กำหนด url manager
+# กำหนด url manager
 
 ```
 'urlManager' => [
