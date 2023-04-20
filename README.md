@@ -1,3 +1,11 @@
+<p align="center">
+    <a href="#" target="_blank">
+        <img src="https://avatars.githubusercontent.com/u/130217376?s=96&v=4" height="100px">
+    </a>
+    <h1 align="center">Yii 2 Basic Project Template</h1>
+    <br>
+</p>
+
 <b>ตัวแย่าง Dinamic form</b>  
 1. git clone https://github.com/samtheerapong/app-tickets.git
 2. cd app-tickets
@@ -6,7 +14,7 @@
 
 http://localhost/app-tickets/web/ticket/index
 
-add url manager
+add url manager 
 
 ```
 'urlManager' => [
