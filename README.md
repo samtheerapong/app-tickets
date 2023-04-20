@@ -129,7 +129,10 @@ config\web.php
 
 ```
 ## 3. Migrate ลง Database
-Command ->   php yii migrate/up --migrationPath=@yii/rbac/migrations
+
+```
+php yii migrate/up --migrationPath=@yii/rbac/migrations
+```
 
 อ้างอิง https://github.com/dektrium/yii2-rbac
 
