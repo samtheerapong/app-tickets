@@ -8,7 +8,7 @@ http://localhost/app-tickets/web/ticket/index
 
 add url manager
 
-<code>
+```
 'urlManager' => [
             'class' => 'yii\web\UrlManager',
             // Disable index.php
@@ -24,3 +24,4 @@ add url manager
             ],
         ],
 </code>
+```
