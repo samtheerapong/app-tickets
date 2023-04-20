@@ -58,6 +58,8 @@ Command ->   php yii migrate/up --migrationPath=@vendor/dektrium/yii2-user/migra
 
 อ้างอิง
 https://github.com/dektrium/yii2-user
+
+List available actions
 https://github.com/dektrium/yii2-user/blob/master/docs/available-actions.md
 
 
