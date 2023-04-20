@@ -6,21 +6,59 @@
     <br>
 </p>
 
-<b>ตัวแย่าง Dinamic form</b>  
+<b>ตัวแย่าง Dinamic form</b>
+
 1. git clone https://github.com/samtheerapong/app-tickets.git
 2. cd app-tickets
 3. composer update
-http://localhost/app-tickets/web/ticket/index
+   http://localhost/app-tickets/web/ticket/index
 
-
-คู่มือส่วนตัว
+<b>คู่มือส่วนตัว</b>
 
 กำหนดสิทธิ์
+
 ## ติดตั้ง dektrium user
-1.	Download
-Command ->   composer require dektrium/yii2-user
-2.	Config
-config\web.php
+
+1. Download
+   Command -> composer require dektrium/yii2-user
+2. Config
+   config\web.php
+
+```
+    'components' => [
+        'user' => [
+            //'identityClass' => 'app\models\User',
+            'identityClass' => 'dektrium\user\models\User',
+            'enableAutoLogin' => false,
+        ],
+
+    ],
+```
+
+modules ระดับเดียวกับ components
+
+```
+'components' => [],
+'modules' => [
+        'user' => [
+            'class' => 'dektrium\user\Module',
+            'enableUnconfirmedLogin' => true,
+            'confirmWithin' => 21600,
+            'cost' => 12,
+            'admins' => ['admin']
+        ],
+
+    ],
+```
+
+3. Migrate ลง Database
+
+Command ->   php yii migrate/up --migrationPath=@vendor/dektrium/yii2-user/migrations
+
+
+อ้างอิง
+https://github.com/dektrium/yii2-user
+https://github.com/dektrium/yii2-user/blob/master/docs/available-actions.md
 
 
 
@@ -29,7 +67,9 @@ config\web.php
 
 
 
-กำหนด url manager 
+
+กำหนด url manager
+
 ```
 'urlManager' => [
             'class' => 'yii\web\UrlManager',
