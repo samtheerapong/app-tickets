@@ -26,6 +26,11 @@ http://dixonsatit.github.io/yii2-learning/
 ```
 http://dixonsatit.github.io/2015/06/18/adminlte.html
 ```
+
+# Line Notify
+```
+https://shorturl.at/FIOZ2
+```
 # กำหนดสิทธิ์
 
 # ติดตั้ง dektrium user
