@@ -2,7 +2,7 @@
     <a href="#" target="_blank">
         <img src="https://avatars.githubusercontent.com/u/130217376?s=96&v=4" height="100px">
     </a>
-    <h1 align="center">Yii 2 Basic Project Dinamic form</h1>
+    <h1 align="center">Yii 2 Basic Ticket</h1> ระบบแจ้งซ่อม
     <br>
 </p>
 
@@ -132,7 +132,10 @@ config\web.php
 
 ```
 ## 3. Migrate ลง Database
-Command ->   php yii migrate/up --migrationPath=@yii/rbac/migrations
+
+```
+php yii migrate/up --migrationPath=@yii/rbac/migrations
+```
 
 อ้างอิง https://github.com/dektrium/yii2-rbac
 
