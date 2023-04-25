@@ -16,7 +16,7 @@ composer update
 ```
    http://localhost/app-tickets/web/ticket/index
 
-# <b>คู่มือส่วนตัว</b>
+# <b>รวมคู่มือ</b>
 
 ``` html
 https://shorturl.at/jlGL9
