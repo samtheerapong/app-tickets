@@ -20,8 +20,12 @@ composer update
 
 ``` html
 https://shorturl.at/jlGL9
+http://dixonsatit.github.io/yii2-learning/
 ```
-
+# AdminLTE
+```
+http://dixonsatit.github.io/2015/06/18/adminlte.html
+```
 # กำหนดสิทธิ์
 
 # ติดตั้ง dektrium user
