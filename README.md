@@ -6,7 +6,7 @@
     <br>
 </p>
 
-<b>ตัวแย่าง Dinamic form</b>
+<b>ตัวอย่าง</b>
 
 1. git clone https://github.com/samtheerapong/app-tickets.git
 2. cd app-tickets
